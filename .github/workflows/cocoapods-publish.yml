@@ -1,0 +1,32 @@
+name: CocoaPods Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install CocoaPods
+        run: gem install cocoapods
+
+      - name: Setup Trunk credentials
+        run: |
+          echo "machine trunk.cocoapods.org
+            login contact@appsynk.io
+            password ${{ secrets.COCOAPODS_TRUNK_TOKEN }}" > ~/.netrc
+          chmod 600 ~/.netrc
+
+      - name: Lint podspec
+        run: pod lib lint AppSynk.podspec --allow-warnings
+
+      - name: Push to CocoaPods Trunk
+        run: pod trunk push AppSynk.podspec --allow-warnings
