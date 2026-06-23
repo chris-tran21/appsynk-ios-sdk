@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppSynk'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'AppSynk Mobile Attribution SDK (native iOS).'
   s.homepage         = 'https://appsynk.io'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
