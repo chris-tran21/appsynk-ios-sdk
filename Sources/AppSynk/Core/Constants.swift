@@ -6,7 +6,7 @@ public enum AppSynkConstants {
 
     /// SDK semantic version. Bump on each release — sent as the `X-SDK-Version` request header and
     /// anywhere the SDK reports its own version.
-    public static let sdkVersion = "1.0.0"
+    public static let sdkVersion = "1.0.1"
 
     /// Platform identifier — sent as the `X-SDK-Platform` header and as `platform` on every event.
     public static let platform = "ios"
