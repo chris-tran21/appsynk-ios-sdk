@@ -16,7 +16,9 @@ external dependencies.
 - iOS 14+
 - Swift 5.9+ / Xcode 15+
 
-## Installation (Swift Package Manager)
+## Installation
+
+### Swift Package Manager
 
 Xcode: **File → Add Package Dependencies…** and paste the repo URL, or add to `Package.swift`:
 
@@ -25,6 +27,14 @@ Xcode: **File → Add Package Dependencies…** and paste the repo URL, or add t
 ```
 
 Then add `AppSynk` to your target's dependencies.
+
+### CocoaPods
+
+Add to your `Podfile`, then run `pod install`:
+
+```ruby
+pod 'AppSynk', '~> 1.0.0'
+```
 
 ### Info.plist
 
